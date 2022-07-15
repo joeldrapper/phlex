@@ -17,6 +17,9 @@ require_relative "phlex/cacheable"
 require_relative "phlex/cacheable_object"
 require_relative "phlex/component"
 require_relative "phlex/text"
+require_relative "phlex/compiler"
+require_relative "phlex/static_component"
+require_relative "phlex/call_chain_collector"
 
 module Phlex
   extend self
