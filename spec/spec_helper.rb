@@ -1,8 +1,10 @@
 require "phlex"
 require "rspec-html-matchers"
+require "memory_profiler"
 
 RSpec.configure do |config|
   config.include RSpecHtmlMatchers
+
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end

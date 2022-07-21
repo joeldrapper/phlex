@@ -8,7 +8,7 @@ module Phlex
 
       def method_missing(name, content = nil, **attributes, &block)
         @tag.classes = name
-        @tag.attributes = attributes if attributes
+        @tag.attributes = attributes
 
         if ::Kernel.block_given?
           if block.binding.receiver.is_a?(Block)

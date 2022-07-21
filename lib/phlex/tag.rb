@@ -23,11 +23,11 @@ module Phlex
     def classes=(value)
       case value
       when String
-        @classes << value.prepend(SPACE)
+        @classes << SPACE << value
       when Symbol
-        @classes << value.to_s.prepend(SPACE)
+        @classes << SPACE << value.to_s
       when Array
-        @classes << value.join(SPACE).prepend(SPACE)
+        @classes << SPACE << value.join(SPACE)
       when nil
         return
       else

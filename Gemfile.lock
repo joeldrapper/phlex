@@ -19,6 +19,7 @@ GEM
     diff-lcs (1.5.0)
     i18n (1.10.0)
       concurrent-ruby (~> 1.0)
+    memory-profiler (1.0.3)
     memory_profiler (1.0.0)
     minitest (5.15.0)
     nokogiri (1.13.6-arm64-darwin)
@@ -50,6 +51,7 @@ PLATFORMS
 
 DEPENDENCIES
   benchmark-memory
+  memory-profiler
   phlex!
   rake (~> 13.0)
   rspec
