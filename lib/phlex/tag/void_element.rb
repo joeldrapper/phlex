@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Phlex
   class Tag
     class VoidElement < Tag
@@ -13,8 +15,8 @@ module Phlex
         col
       ].freeze
 
-      def call
-        "<#{opening_tag_content} />"
+      def call(buffer = String.new)
+        buffer << "<" << name << attributes << " />"
       end
     end
   end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Phlex
   class Raw
     include Callable
@@ -6,8 +8,8 @@ module Phlex
       @content = content
     end
 
-    def call
-      @content
+    def call(buffer = String.new)
+      buffer << @content
     end
   end
 end

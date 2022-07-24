@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Phlex
   class Text
     include Callable
@@ -6,8 +8,8 @@ module Phlex
       @content = content
     end
 
-    def call
-      ERB::Util.html_escape(@content)
+    def call(buffer = String.new)
+      buffer << ERB::Util.html_escape(@content)
     end
   end
 end

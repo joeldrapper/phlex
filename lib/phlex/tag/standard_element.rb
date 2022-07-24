@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Phlex
   class Tag
     class StandardElement < Tag
@@ -99,8 +101,10 @@ module Phlex
         wbr
       ].freeze
 
-      def call
-        "<#{opening_tag_content}>#{super}</#{name}>"
+      def call(buffer = String.new)
+        buffer << "<" << name << attributes << ">"
+        super
+        buffer << "</" << name << ">"
       end
     end
   end

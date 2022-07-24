@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Phlex
   module Node
     include Callable
@@ -6,8 +8,9 @@ module Phlex
       @_children ||= []
     end
 
-    def call
-      children.map(&:call).join
+    def call(buffer = String.new)
+      children.each { _1.call(buffer) }
+      buffer
     end
   end
 end
