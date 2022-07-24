@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require "digest"
 
 module Phlex
@@ -12,11 +13,6 @@ module Phlex
         @_content = block
 
         super(*args, **kwargs)
-      end
-
-      def call
-        return super unless @_cache
-        Rails.cache.fetch(self) { super }
       end
 
       def template(...)
@@ -97,7 +93,7 @@ module Phlex
       attributes.each { |k, v| instance_variable_set("@#{k}", v) }
     end
 
-    def call
+    def call(buffer = String.new)
       template(&@_content)
       super
     end

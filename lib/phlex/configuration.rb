@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Phlex
   class Configuration
     attr_accessor :convert_underscores_to_dashes

@@ -37,10 +37,6 @@ module Phlex
 
     private
 
-    def opening_tag_content
-      name + attributes
-    end
-
     def attributes
       attributes = @attributes.dup
       attributes[:class] = classes
